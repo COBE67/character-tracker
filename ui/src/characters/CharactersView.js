@@ -27,12 +27,12 @@ export default class extends Component {
                         <div key={id}>
                             <h3>{`${name}: LVL ${level}`}</h3>
                             <p>{backstory}</p>
-                            <DeleteCharacter id={id}/>
                             <UpdateCharacter id={id}
                                              name={name}
                                              level={level}
                                              backstory={backstory}
                             />
+                            <DeleteCharacter id={id}/>
                         </div>
                     ));
                 }}
