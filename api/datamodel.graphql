@@ -1,0 +1,52 @@
+enum Class {
+  WIZARD
+  BARD
+  FIGHTER
+  WARLOCK
+  CLERIC
+  RANGER
+}
+
+enum Race {
+  HUMAN
+  ELF
+  DWARF
+  HOBBIT
+  ORC
+  GOBLIN
+  GNOME
+}
+
+enum ItemKind {
+  WEAPON
+  POTION
+  CLOTHING
+  ARMOR
+  EDIBLE
+  QUEST
+  ACCESSORY
+}
+
+type Character {
+  id: ID! @unique
+  name: String!
+  level: Int!
+  race: [Race!]!
+  class: [Class!]!
+  health: Float
+  backstory: String
+
+  items: [Item!]! @relation(name: "Inventory")
+}
+
+type Item {
+  id: ID! @unique
+  name: String!
+  desc: String!
+  type: ItemKind!
+  power: Float
+
+  character: Character @relation(name: "Inventory")
+}
+
+
