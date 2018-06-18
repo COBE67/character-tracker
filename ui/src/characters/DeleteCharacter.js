@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
+import Button from '@material-ui/core/Button';
 
 export default class extends Component {
     deleteCharacterMutation = gql`
@@ -25,7 +26,8 @@ export default class extends Component {
                         })
                         window.location.reload(true)
                     }}>
-                        <input type="submit" value="Delete"/>
+                        <Button type="submit" size="small" variant="contained" color="secondary">Delete</Button>
+
                     </form>
                 )}
             </Mutation>

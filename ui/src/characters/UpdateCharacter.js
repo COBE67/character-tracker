@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 // 1. Pass in Character as Props
 // 2. Build pre-populated form that updates state
 // 3. Configure Update/Submit component swapping
@@ -29,9 +31,12 @@ export default class extends Component {
     updateComp = () => {
         return (
             <Fragment>
-                <input type="text" value={this.state.name} onChange={event => this.setState({name : event.target.value})}/>
-                <input type="number" value={this.state.level} onChange={event => this.setState({level : parseInt(event.target.value)})}/>
-                <input type="text" value={this.state.backstory} onChange={event => this.setState({backstory : event.target.value})}/>
+                <TextField type="text" value={this.state.name} onChange={event => this.setState({name : event.target.value})}/>
+                <br/>
+                <TextField type="number" value={this.state.level} onChange={event => this.setState({level : parseInt(event.target.value)})}/>
+                <br/>
+                <TextField type="text" value={this.state.backstory} onChange={event => this.setState({backstory : event.target.value})}/>
+                <br/>
             </Fragment>
         )
     }
@@ -59,7 +64,7 @@ export default class extends Component {
                         this.setState({isUpdating: !this.state.isUpdating })
                     }}>
                         {this.state.isUpdating ? update : null}
-                        <input type="submit" value={this.state.buttonText}/>
+                        <Button type="submit" size="small" variant="contained" color="error">{this.state.buttonText}</Button>
                     </form>
                 )}
             </Mutation>

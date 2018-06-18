@@ -3,3 +3,21 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+p {
+  width: 10em;
+}
+
+.flexer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flexer > div{
+  margin: 1em;
+}
+
+#charCreate{
+  height: 1em;
+}
