@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import Paper from '@material-ui/core/Paper';
-import { withStyles } from '@material-ui/core/styles';
 
 import DeleteCharacter from './DeleteCharacter'
 import UpdateCharacter from './UpdateCharacter'

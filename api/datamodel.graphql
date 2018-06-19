@@ -43,7 +43,7 @@ type Item {
   id: ID! @unique
   name: String!
   desc: String!
-  type: ItemKind!
+  type: ItemKind
   power: Float
 
   character: Character @relation(name: "Inventory")

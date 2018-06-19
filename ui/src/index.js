@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import './index.css';
-import CharactersView from './characters/CharactersView'
-import CreateCharacter from './characters/CreateCharacter'
+import Routes from './config/Routes'
+import Nav from './config/Nav'
 
 const client = new ApolloClient({
     uri: "https://us1.prisma.sh/wes-cutting-92f43f/api/dev"
@@ -13,12 +14,12 @@ const client = new ApolloClient({
 
 const App = () => (
     <ApolloProvider client={client}>
-        <div>
-            <h2>🚀 Character Tracking System</h2>
-            <CreateCharacter/>
-            <hr/>
-            <CharactersView/>
-        </div>
+        <Router>
+            <Fragment>
+                <Nav/>
+                <Routes/>
+            </Fragment>
+        </Router>
     </ApolloProvider>
 );
 
